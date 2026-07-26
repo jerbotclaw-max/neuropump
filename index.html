@@ -515,6 +515,162 @@
       font-weight: 700;
     }
 
+    .future-world {
+      position: relative;
+      margin: 42px 0;
+      padding: 110px 0;
+      border-block: 1px solid rgba(156, 210, 255, .19);
+      background:
+        linear-gradient(135deg, rgba(48, 111, 126, .23), rgba(82, 68, 139, .25) 50%, rgba(39, 118, 86, .19)),
+        linear-gradient(180deg, #0b171a, #101222 52%, #091713);
+      box-shadow: inset 0 40px 120px rgba(84, 217, 255, .035);
+      overflow: hidden;
+    }
+    .future-world::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 14% 6%, rgba(84,217,255,.17), transparent 28rem),
+        radial-gradient(circle at 88% 92%, rgba(115,247,170,.13), transparent 30rem);
+    }
+    .future-inner { position: relative; z-index: 1; }
+    .future-header {
+      display: grid;
+      grid-template-columns: 1fr .65fr;
+      gap: 46px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+    .future-header h2 { max-width: 760px; margin-bottom: 0; }
+    .future-intro {
+      margin: 0;
+      color: #b4c7c7;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+    .future-spectrum {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 24px;
+      color: #a9c4c6;
+      font: 750 10px/1 ui-monospace, monospace;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .future-spectrum::before,
+    .future-spectrum::after {
+      content: "";
+      height: 1px;
+    }
+    .future-spectrum::before { background: linear-gradient(90deg, transparent, var(--cyan)); }
+    .future-spectrum::after { background: linear-gradient(90deg, var(--danger), transparent); }
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .future-card {
+      position: relative;
+      min-height: 360px;
+      padding: clamp(24px, 3vw, 34px);
+      border: 1px solid rgba(192, 231, 255, .16);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(19, 39, 47, .87), rgba(16, 17, 34, .84));
+      box-shadow: 0 28px 70px rgba(0,0,0,.28);
+      overflow: hidden;
+    }
+    .future-card::after {
+      content: attr(data-index);
+      position: absolute;
+      right: 16px;
+      bottom: -32px;
+      color: rgba(198, 235, 255, .04);
+      font-size: 10rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .future-card > * { position: relative; z-index: 1; }
+    .future-card.dark {
+      border-color: rgba(255, 143, 147, .22);
+      background: linear-gradient(145deg, rgba(50, 26, 38, .88), rgba(18, 18, 35, .9));
+    }
+    .future-card.horizon {
+      grid-column: 1 / -1;
+      min-height: auto;
+      background:
+        linear-gradient(110deg, rgba(17, 49, 51, .92), rgba(31, 26, 59, .9) 52%, rgba(52, 29, 41, .86));
+    }
+    .future-label {
+      display: inline-block;
+      margin-bottom: 38px;
+      color: var(--cyan);
+      font: 800 10px/1 ui-monospace, monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .future-card:nth-child(2) .future-label { color: var(--green); }
+    .future-card:nth-child(3) .future-label { color: var(--violet); }
+    .future-card:nth-child(4) .future-label { color: var(--acid); }
+    .future-card.dark .future-label { color: var(--danger); }
+    .future-card.horizon .future-label { color: var(--warn); }
+    .future-card h3 {
+      margin-bottom: 20px;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+    .future-card ul {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .future-card li {
+      position: relative;
+      padding-left: 18px;
+      color: #abc0c0;
+      font-size: .93rem;
+    }
+    .future-card li::before {
+      content: "";
+      position: absolute;
+      top: .62em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .55;
+    }
+    .future-card strong { color: var(--ink); }
+    .horizon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .horizon-path {
+      padding: 18px;
+      border: 1px solid rgba(203, 236, 255, .12);
+      border-radius: 15px;
+      color: #a9bcbd;
+      background: rgba(255,255,255,.025);
+      font-size: .9rem;
+    }
+    .horizon-path strong { display: block; margin-bottom: 6px; }
+    .net-assessment {
+      margin: 22px 0 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(203, 236, 255, .13);
+      color: #d9f8e8;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 720;
+    }
+
     .dream {
       padding: 110px 0 125px;
       text-align: center;
@@ -576,6 +732,7 @@
       .compound-layout, .safety-wrap { grid-template-columns: 1fr; }
       .use-cases { grid-template-columns: 1fr 1fr; }
       .case { min-height: 260px; }
+      .future-header { grid-template-columns: 1fr; gap: 18px; }
     }
     @media (max-width: 620px) {
       .shell { width: min(100% - 26px, 1180px); }
@@ -594,6 +751,10 @@
       .step { min-height: 210px; }
       .compare-row { grid-template-columns: 90px 1fr; }
       .concept-alert { grid-column: auto; }
+      .future-world { margin: 20px 0; padding: 82px 0; }
+      .future-grid, .horizon-grid { grid-template-columns: 1fr; }
+      .future-card, .future-card.horizon { grid-column: auto; min-height: auto; }
+      .future-label { margin-bottom: 28px; }
       .dream { padding: 85px 0 100px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
@@ -789,43 +950,94 @@
       </div>
     </section>
 
+    <section class="future-world" id="world">
+      <div class="shell future-inner">
+        <div class="future-header">
+          <div>
+            <span class="eyebrow">The world this builds</span>
+            <h2>Utopia and dystopia, simultaneously.</h2>
+          </div>
+          <p class="future-intro">If cognitive reward becomes programmable, society does not simply get more productive. Education, science, art, labor, inequality, and addiction all change at once.</p>
+        </div>
+
+        <div class="future-spectrum">Promise and peril are the same system</div>
+
+        <div class="future-grid">
+          <article class="future-card" data-index="01">
+            <span class="future-label">Education transformed</span>
+            <h3>School becomes addictive—in the productive sense.</h3>
+            <ul>
+              <li>Students could literally feel euphoric studying constitutional law, calculus, or organic chemistry.</li>
+              <li>Dropout rates might plummet as sustained study competes with instant-gratification media on equal neurochemical ground.</li>
+              <li>The “ADHD epidemic” could partially ease if reward follows focus instead of distraction—though that is not a substitute for diagnosis or care.</li>
+              <li><strong>The fracture:</strong> students who cannot afford enhancement fall behind faster. The digital divide becomes chemical.</li>
+            </ul>
+          </article>
+
+          <article class="future-card" data-index="02">
+            <span class="future-label">Scientific acceleration</span>
+            <h3>The unglamorous grind becomes genuinely thrilling.</h3>
+            <ul>
+              <li>Researchers enter sustained flow for six-to-eight-hour deep-work sessions.</li>
+              <li>Fusion energy benefits when dense plasma-physics literature review feels as compelling as the breakthrough it enables.</li>
+              <li>Drug discovery, materials science, and climate modeling retain talent through years of methodical, difficult work.</li>
+              <li><strong>Thought experiment:</strong> if 10,000 leading researchers sustained 2× productivity, it would resemble adding another 10,000 to the scientific workforce.</li>
+            </ul>
+          </article>
+
+          <article class="future-card" data-index="03">
+            <span class="future-label">The creativity explosion</span>
+            <h3>Ten thousand hours of bliss, not grind.</h3>
+            <ul>
+              <li>Novelists, composers, and filmmakers learn to love editing, revising, rewriting, and every stubborn middle.</li>
+              <li>Mastery’s famous 10,000 hours become emotionally magnetic instead of an endurance test.</li>
+              <li>More ambitious work gets finished because creators stop abandoning projects at the painful refinement stage.</li>
+              <li><strong>The counter-culture question:</strong> does art born from engineered euphoria lose its edge? Does suffering still create something pleasure cannot?</li>
+            </ul>
+          </article>
+
+          <article class="future-card" data-index="04">
+            <span class="future-label">The attention economy inverted</span>
+            <h3>Your dopamine works for your goals.</h3>
+            <ul>
+              <li>Today, TikTok and Instagram mine human reward systems for advertising revenue.</li>
+              <li>In a NEUROPUMP world, the reward loop is redirected toward goals the user chooses.</li>
+              <li>Doomscrolling becomes comparatively unrewarding because deep work now owns the stronger learned association.</li>
+              <li><strong>The inversion:</strong> Facebook and TikTok lose to physics textbooks—not through willpower, but through incentive design.</li>
+            </ul>
+          </article>
+
+          <article class="future-card dark" data-index="05">
+            <span class="future-label">The dark side</span>
+            <h3>Productive does not mean free.</h3>
+            <ul>
+              <li>Chemical dependency could emerge at population scale—even plant-based, even with proposed ceiling effects.</li>
+              <li>If an employer sets the pump’s goals, “productivity” becomes pharmacological coercion.</li>
+              <li>Unenhanced people risk becoming second-class citizens in knowledge work.</li>
+              <li>FDA, DEA, and international drug treaties create a regulatory maze with no clean precedent.</li>
+              <li>Black-market versions would likely strip away VLM guardrails, dose ceilings, and end-of-session titration.</li>
+            </ul>
+          </article>
+
+          <article class="future-card horizon" data-index="50">
+            <span class="future-label">The 50-year horizon</span>
+            <h3>Three futures. No neutral outcome.</h3>
+            <div class="horizon-grid">
+              <div class="horizon-path"><strong>If it works and is safe</strong>A civilization where intellectual breakthroughs could arrive three-to-five times faster.</div>
+              <div class="horizon-path"><strong>If it works and is dangerous</strong>The worst addiction crisis in history—except the addicted population is extraordinarily productive.</div>
+              <div class="horizon-path"><strong>If it is banned</strong>Demand may drive it underground, where there is less safety engineering and fewer enforceable guardrails.</div>
+            </div>
+            <p class="net-assessment">Net assessment: some form of programmable cognitive reward may be inevitable. The real question is whether it arrives with privacy, autonomy, access, and medical guardrails—or without them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="shell dream">
       <span class="eyebrow">The dream</span>
       <h2>What if focus felt like <span class="gradient-text">falling in love</span> with the work?</h2>
       <p class="dream-copy">Imagine a generation of scholars, inventors, and researchers whose reward systems are literally trained to find deep intellectual work euphoric.</p>
       <p class="dream-close">No more doomscrolling. The dopamine comes from <span>the breakthrough</span>, not the feed.</p>
-    </section>
-
-    <!-- WORLD THIS BUILDS -->
-    <section class="shell" style="padding:60px 0;">
-      <span class="eyebrow" style="color:var(--violet);">The World This Builds</span>
-      <h2 style="margin-bottom:30px;">A society where <span class="gradient-text">deep work is euphoric</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;">
-          <h3 style="font-size:1.3rem;color:var(--green);margin-bottom:12px;">📚 Education Transformed</h3>
-          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;">Students feel euphoric studying constitutional law, calculus, organic chemistry. Dropout rates plummet. The ADHD epidemic partially solves itself — the reward follows the focus, not the distraction. <strong style="color:var(--warn);">Risk:</strong> students who can't afford NEUROPUMP fall behind faster. The new digital divide becomes chemical.</p>
-        </div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;">
-          <h3 style="font-size:1.3rem;color:var(--cyan);margin-bottom:12px;">🔬 Scientific Acceleration</h3>
-          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;">Researchers enter flow states on demand for 6-8 hour sessions. Fusion energy literature review becomes genuinely thrilling. Drug discovery, materials science, climate modeling retain talent. If top 10,000 researchers globally got 2x productivity, that's effectively doubling the scientific workforce.</p>
-        </div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;">
-          <h3 style="font-size:1.3rem;color:var(--violet);margin-bottom:12px;">🎨 The Creativity Explosion</h3>
-          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;">Novelists, composers, filmmakers conditioned to find editing and revising euphoric instead of agonizing. The 10,000 hours becomes 10,000 hours of bliss. <strong style="color:var(--warn);">Counter-culture risk:</strong> does art born from euphoria lose its edge? Does suffering still create?</p>
-        </div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;">
-          <h3 style="font-size:1.3rem;color:var(--acid);margin-bottom:12px;">📱 The Attention Economy Inverts</h3>
-          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;">Current system: TikTok mines your dopamine for ad revenue. NEUROPUMP world: your dopamine is mined by your OWN goals. Doomscrolling becomes literally unrewarding by comparison. Facebook and TikTok lose to physics textbooks.</p>
-        </div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;">
-          <h3 style="font-size:1.3rem;color:var(--danger);margin-bottom:12px;">⚠️ The Dark Side</h3>
-          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;">Chemical dependency at population scale. Who controls the goal-setting? If your employer sets your pump goals, is that coercion? The un-enhanced become second-class citizens in knowledge work. Regulatory nightmare: FDA, DEA, international drug treaties. Black market versions with no guardrails.</p>
-        </div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;">
-          <h3 style="font-size:1.3rem;color:var(--warn);margin-bottom:12px;">🔮 The 50-Year Horizon</h3>
-          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;">If safe: breakthroughs happen 3-5x faster. If dangerous: the worst addiction crisis in history, but productive. If banned: it happens anyway, underground, without safety engineering. <strong style="color:var(--ink);">The technology is inevitable. The question is whether we build it with guardrails.</strong></p>
-        </div>
-      </div>
     </section>
 
     <!-- COMIC STRIP -->
