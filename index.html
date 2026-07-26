@@ -671,6 +671,232 @@
       font-weight: 720;
     }
 
+    .production-section { padding: 72px 0; }
+    .production-section h2 { margin-bottom: 30px; }
+    .comic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .comic-panel {
+      position: relative;
+      min-height: 370px;
+      padding: 18px;
+      border: 2px solid rgba(238, 252, 246, .18);
+      border-radius: 18px;
+      background: #090c0b;
+      box-shadow: 0 22px 50px rgba(0,0,0,.34);
+      overflow: hidden;
+    }
+    .comic-panel:nth-child(2) { border-color: rgba(115,247,170,.58); }
+    .comic-panel:nth-child(3) { border-color: rgba(168,140,255,.58); }
+    .comic-panel:nth-child(4) { border-color: rgba(201,255,99,.58); }
+    .comic-number {
+      position: absolute;
+      top: 12px;
+      left: 13px;
+      z-index: 2;
+      color: #82938e;
+      font: 800 9px/1 ui-monospace, monospace;
+      letter-spacing: .12em;
+    }
+    .comic-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      height: 190px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(115,247,170,.08), transparent 46%),
+        linear-gradient(145deg, #101914, #090a0d);
+      overflow: hidden;
+    }
+    .comic-panel:nth-child(2) .comic-art { background: radial-gradient(circle at 50% 48%, rgba(115,247,170,.24), transparent 48%), #09100c; }
+    .comic-panel:nth-child(3) .comic-art { background: radial-gradient(circle at 50% 48%, rgba(168,140,255,.24), transparent 50%), #0d0b14; }
+    .comic-panel:nth-child(4) .comic-art { background: radial-gradient(circle at 50% 48%, rgba(201,255,99,.15), transparent 52%), #0d1009; }
+    .comic-figure {
+      position: relative;
+      width: 76px;
+      height: 100px;
+      border-radius: 36px 36px 20px 20px;
+      background: linear-gradient(145deg, #27322e, #101512);
+    }
+    .comic-figure::before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: 16px;
+      width: 44px;
+      height: 52px;
+      border-radius: 48% 48% 42% 42%;
+      background: #b79378;
+      box-shadow: inset 0 13px 0 #26332e;
+    }
+    .comic-figure::after {
+      content: "—  —";
+      position: absolute;
+      top: -3px;
+      left: 21px;
+      color: #282b2a;
+      font: 900 10px/1 monospace;
+      letter-spacing: 2px;
+      transform: rotate(8deg);
+    }
+    .comic-panel:nth-child(3) .comic-figure::after {
+      content: "●  ●";
+      color: var(--violet);
+      text-shadow: 0 0 10px var(--violet);
+      transform: none;
+    }
+    .comic-book {
+      position: absolute;
+      right: 23px;
+      bottom: 19px;
+      width: 88px;
+      height: 55px;
+      transform: rotate(-8deg);
+      border: 2px solid rgba(238,252,246,.35);
+      border-radius: 5px;
+      background: linear-gradient(90deg, #d4ded8 49%, #9aaba4 50%, #e3e8e4 52%);
+    }
+    .comic-book::after {
+      content: "51";
+      position: absolute;
+      top: 15px;
+      left: 36px;
+      color: #26342f;
+      font: 900 12px/1 monospace;
+    }
+    .comic-eye {
+      position: absolute;
+      top: 45px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--green) 0 9%, #183e42 10% 28%, #050708 30%);
+      box-shadow: 0 0 24px rgba(115,247,170,.62);
+    }
+    .comic-motion {
+      position: absolute;
+      top: 40px;
+      left: 24px;
+      color: var(--violet);
+      font: 900 28px/1 monospace;
+      letter-spacing: 5px;
+      transform: rotate(-10deg);
+      text-shadow: 0 0 16px rgba(168,140,255,.5);
+    }
+    .comic-caption {
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .speech {
+      position: relative;
+      margin: -8px 0 17px;
+      padding: 12px 14px;
+      border: 1px solid rgba(115,247,170,.35);
+      border-radius: 12px;
+      color: var(--green);
+      background: rgba(115,247,170,.075);
+      font: 800 11px/1.35 ui-monospace, monospace;
+      text-align: center;
+    }
+    .speech::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -7px;
+      width: 12px;
+      height: 12px;
+      transform: translateX(-50%) rotate(45deg);
+      border-right: 1px solid rgba(115,247,170,.35);
+      border-bottom: 1px solid rgba(115,247,170,.35);
+      background: #0e1712;
+    }
+    .speech.final {
+      color: var(--acid);
+      border-color: rgba(201,255,99,.38);
+      background: rgba(201,255,99,.075);
+      font-size: .9rem;
+    }
+    .speech.final::after { border-color: rgba(201,255,99,.38); background: #13170d; }
+
+    .episode-panel,
+    .opensource-panel {
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(15,27,26,.9), rgba(12,13,25,.84));
+      box-shadow: var(--shadow);
+    }
+    .episode-logline {
+      max-width: 980px;
+      margin-bottom: 26px;
+      color: #b7cac5;
+      font-size: clamp(1rem, 1.7vw, 1.16rem);
+      line-height: 1.7;
+    }
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .cast-card {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      background: rgba(72,129,255,.07);
+    }
+    .cast-card:nth-child(2) { background: rgba(255,143,147,.07); }
+    .cast-card:nth-child(3) { background: rgba(168,140,255,.08); }
+    .cast-card h3 { margin-bottom: 9px; color: #6f9aff; }
+    .cast-card:nth-child(2) h3 { color: var(--danger); }
+    .cast-card:nth-child(3) h3 { color: var(--violet); }
+    .cast-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .repo-tree {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 12px;
+      color: var(--green);
+      background: #080b0a;
+      font: 750 .79rem/1.65 ui-monospace, monospace;
+    }
+    .repo-tree:nth-child(2) { color: var(--cyan); }
+    .repo-tree:nth-child(3) { color: var(--violet); }
+    .contribute-row {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 18px;
+      align-items: start;
+      padding: 22px;
+      border: 1px solid rgba(84,217,255,.14);
+      border-radius: 15px;
+      background: rgba(84,217,255,.035);
+    }
+    .contribute-row h3 { margin: 0; color: var(--cyan); }
+    .contribute-row p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .build-warning {
+      margin: 18px 0 0;
+      padding: 18px;
+      border: 1px solid rgba(255,143,147,.2);
+      border-radius: 14px;
+      color: #ffc4c6;
+      background: rgba(255,143,147,.055);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
     .dream {
       padding: 110px 0 125px;
       text-align: center;
@@ -733,6 +959,7 @@
       .use-cases { grid-template-columns: 1fr 1fr; }
       .case { min-height: 260px; }
       .future-header { grid-template-columns: 1fr; gap: 18px; }
+      .comic-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 620px) {
       .shell { width: min(100% - 26px, 1180px); }
@@ -755,6 +982,8 @@
       .future-grid, .horizon-grid { grid-template-columns: 1fr; }
       .future-card, .future-card.horizon { grid-column: auto; min-height: auto; }
       .future-label { margin-bottom: 28px; }
+      .comic-grid, .cast-grid, .repo-grid, .contribute-row { grid-template-columns: 1fr; }
+      .comic-panel { min-height: 340px; }
       .dream { padding: 85px 0 100px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
@@ -1040,65 +1269,85 @@
       <p class="dream-close">No more doomscrolling. The dopamine comes from <span>the breakthrough</span>, not the feed.</p>
     </section>
 
-    <!-- COMIC STRIP -->
-    <section class="shell" style="padding:40px 0;">
-      <span class="eyebrow" style="color:var(--acid);">Comic</span>
-      <h2 style="margin-bottom:30px;">NEUROPUMP <span class="gradient-text">in Action</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-        <div style="background:#0a0a0a;border:2px solid var(--line);border-radius:16px;padding:24px;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:2.5rem;margin-bottom:12px;">😴📖</div>
-          <p style="color:var(--muted);font-size:.9rem;">Student struggles through Federalist Papers. Eyes glazing. Phone buzzing. Doomscrolling imminent.</p>
-        </div>
-        <div style="background:#0a0a0a;border:2px solid var(--green);border-radius:16px;padding:24px;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:2.5rem;margin-bottom:12px;">👁️✨</div>
-          <p style="color:var(--green);font-size:.9rem;font-weight:600;">NEUROPUMP activates.<br>VLM Eye glows.<br>"GOAL DETECTED: CONSTITUTIONAL LAW"</p>
-        </div>
-        <div style="background:#0a0a0a;border:2px solid var(--violet);border-radius:16px;padding:24px;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:2.5rem;margin-bottom:12px;">🤩⚡📝</div>
-          <p style="color:var(--violet);font-size:.9rem;font-weight:600;">Eyes wide. Heart racing. Speed-reading. Furious notes. Every paragraph hits like a dopamine sunrise.</p>
-        </div>
-        <div style="background:#0a0a0a;border:2px solid var(--acid);border-radius:16px;padding:24px;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:2.5rem;margin-bottom:12px;">😌💚</div>
-          <p style="color:var(--acid);font-size:.9rem;font-weight:600;">Session ends. Pump titrates down. Student looks up: "I think I'm in love with Federalist 51."</p>
+    <section class="shell production-section" id="comic">
+      <span class="eyebrow" style="color:var(--acid);">Comic strip / four panels</span>
+      <h2>NEUROPUMP <span class="gradient-text">in action.</span></h2>
+      <div class="comic-grid">
+        <article class="comic-panel">
+          <span class="comic-number">PANEL 01</span>
+          <div class="comic-art" aria-label="A tired student slumps over an open copy of the Federalist Papers">
+            <div class="comic-figure"></div>
+            <div class="comic-book"></div>
+          </div>
+          <p class="comic-caption">The student struggles through the Federalist Papers. Eyes glazing. Phone buzzing. Doomscrolling imminent.</p>
+        </article>
+        <article class="comic-panel">
+          <span class="comic-number">PANEL 02</span>
+          <div class="comic-art" aria-label="The wearable's VLM eye illuminates and recognizes constitutional-law study">
+            <div class="comic-figure"></div>
+            <div class="comic-eye"></div>
+          </div>
+          <div class="speech">GOAL DETECTED:<br>CONSTITUTIONAL LAW</div>
+          <p class="comic-caption">NEUROPUMP activates. The VLM eye glows. Work and goal are a match.</p>
+        </article>
+        <article class="comic-panel">
+          <span class="comic-number">PANEL 03</span>
+          <div class="comic-art" aria-label="The student becomes alert, speed-reads, and takes rapid notes">
+            <div class="comic-motion">///</div>
+            <div class="comic-figure"></div>
+            <div class="comic-book"></div>
+          </div>
+          <p class="comic-caption">Eyes wide. Speed-reading. Furious notes. Every paragraph hits like a dopamine sunrise.</p>
+        </article>
+        <article class="comic-panel">
+          <span class="comic-number">PANEL 04</span>
+          <div class="comic-art" aria-label="The completed student relaxes as the wearable titrates down">
+            <div class="comic-figure"></div>
+            <div class="comic-book"></div>
+          </div>
+          <div class="speech final">“I think I’m in love<br>with Federalist 51.”</div>
+          <p class="comic-caption">Session complete. The pump titrates down and the student looks directly at the camera.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell production-section" id="svalley">
+      <span class="eyebrow" style="color:var(--danger);">SValley episode concept</span>
+      <h2>“Dopamine <span class="gradient-text">Democracy”</span></h2>
+      <div class="episode-panel">
+        <p class="episode-logline"><strong>Logline:</strong> When a startup launches a plant-based pump that makes studying constitutional law feel like falling in love, Zuck wants to acquire it, Boz wants to ban it, and Elon wants to inject it directly into the prefrontal cortex.</p>
+        <div class="cast-grid">
+          <article class="cast-card">
+            <h3>Zuck</h3>
+            <p>“This IS the metaverse. We’re not building worlds—we’re building the desire to build worlds. We need this at Meta yesterday.”</p>
+          </article>
+          <article class="cast-card">
+            <h3>Boz</h3>
+            <p>“You’re talking about wiretapping the human reward system with a leaf. This is the most Meta sentence ever spoken and that’s saying something.”</p>
+          </article>
+          <article class="cast-card">
+            <h3>Elon</h3>
+            <p>“Why transdermal? Neuralink can do this in 18 months. Skip the patch, go straight to the brain. Also I want one implanted in myself by Thursday.”</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- SVALLEY EPISODE -->
-    <section class="shell" style="padding:40px 0;">
-      <span class="eyebrow" style="color:var(--danger);">SValley Podcast</span>
-      <h2 style="margin-bottom:20px;">Episode Concept: <span class="gradient-text">"Dopamine Democracy"</span></h2>
-      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:36px;">
-        <p style="color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:20px;"><strong style="color:var(--ink);">Logline:</strong> When a startup launches a plant-based pump that makes studying constitutional law feel like falling in love, Zuck wants to acquire it, Boz wants to ban it, and Elon wants to inject it directly into the prefrontal cortex.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-          <div style="background:rgba(72,129,255,.08);border-radius:12px;padding:20px;">
-            <h4 style="color:#4881ff;margin-bottom:8px;">📘 Zuck</h4>
-            <p style="color:var(--muted);font-size:.85rem;">"This IS the metaverse. We're not building worlds — we're building the desire to build worlds. We need this at Meta yesterday."</p>
-          </div>
-          <div style="background:rgba(255,143,147,.08);border-radius:12px;padding:20px;">
-            <h4 style="color:var(--danger);margin-bottom:8px;">🛡️ Boz</h4>
-            <p style="color:var(--muted);font-size:.85rem;">"You're talking about wiretapping the human reward system with a leaf. This is the most Meta sentence ever spoken and that's saying something."</p>
-          </div>
-          <div style="background:rgba(200,100,255,.08);border-radius:12px;padding:20px;">
-            <h4 style="color:var(--violet);margin-bottom:8px;">🚀 Elon</h4>
-            <p style="color:var(--muted);font-size:.85rem;">"Why transdermal? Neuralink can do this in 18 months. Skip the patch, go straight to the brain. Also I want one implanted in myself by Thursday."</p>
-          </div>
+    <section class="shell production-section" id="open-source">
+      <span class="eyebrow">Open source / defensive prior art</span>
+      <h2>MIT licensed. <span class="gradient-text">Build at your own risk.</span></h2>
+      <div class="opensource-panel">
+        <p class="episode-logline">NEUROPUMP is framed as an open research concept—not a commercial product. The architecture, VLM approach, hardware hypothesis, and control model are published and timestamped as defensive prior art.</p>
+        <div class="repo-grid" aria-label="Conceptual GitHub repository structure">
+          <div class="repo-tree">/hardware<br>├─ pump-schematic.pdf<br>├─ transdermal-spec.md<br>└─ BOM.csv</div>
+          <div class="repo-tree">/vlm<br>├─ activity-classifier.py<br>├─ goal-matcher.py<br>└─ flow-detector.py</div>
+          <div class="repo-tree">/dosing<br>├─ titration-algo.py<br>├─ ceiling-model.md<br>└─ dependency-prevention.py</div>
         </div>
-      </div>
-    </section>
-
-    <!-- OPEN SOURCE -->
-    <section class="shell" style="padding:40px 0 20px;">
-      <span class="eyebrow" style="color:var(--green);">Open Source</span>
-      <h2 style="margin-bottom:20px;">MIT Licensed. <span class="gradient-text">Build at your own risk.</span></h2>
-      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:36px;">
-        <p style="color:var(--muted);font-size:.95rem;line-height:1.6;margin-bottom:16px;">NEUROPUMP is released as defensive prior art under MIT License. The concept, system architecture, VLM classification approach, and dosing algorithm are all documented and timestamped.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-bottom:16px;">
-          <div style="background:#0a0a0a;border-radius:10px;padding:16px;font-family:monospace;font-size:.8rem;color:var(--green);">/hardware<br>├─ pump-schematic.pdf<br>├─ transdermal-spec.md<br>└─ BOM.csv</div>
-          <div style="background:#0a0a0a;border-radius:10px;padding:16px;font-family:monospace;font-size:.8rem;color:var(--cyan);">/vlm<br>├─ activity-classifier.py<br>├─ goal-matcher.py<br>└─ flow-detector.py</div>
-          <div style="background:#0a0a0a;border-radius:10px;padding:16px;font-family:monospace;font-size:.8rem;color:var(--violet);">/dosing<br>├─ titration-algo.py<br>├─ ceiling-model.md<br>└─ dependency-prevention.py</div>
+        <div class="contribute-row">
+          <h3>CONTRIBUTING.md</h3>
+          <p>Contributions should analyze feasibility, safety, privacy, autonomy, regulation, and failure modes. No dosing advice, sourcing instructions, self-experiment logs, or claims of medical efficacy. Treat the repository as a research record and prior-art disclosure—not a product roadmap.</p>
         </div>
-        <p style="color:var(--danger);font-size:.85rem;font-weight:600;">⚠️ This is a research concept, not a product. Do not self-experiment with kratom derivatives. Mitragynine has dependency risk even with ceiling effects. This repo documents an idea, not instructions.</p>
+        <p class="build-warning">Build at your own risk. Do not self-experiment with kratom derivatives. Mitragynine and 7-hydroxymitragynine carry dependence and interaction risks; this page documents a speculative idea, not instructions, evidence of safety, or medical advice.</p>
       </div>
     </section>
   </main>
